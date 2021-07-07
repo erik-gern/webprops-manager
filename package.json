@@ -1,0 +1,46 @@
+{
+  "name": "web-props-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".pnp.js",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootstrap-icons": "^1.4.0",
+    "brfs": "^2.0.2",
+    "exorcist": "^2.0.0",
+    "express": "^4.17.1",
+    "htmly": "^1.1.2",
+    "jquery": "^3.6.0",
+    "js-yaml": "^4.0.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "popper": "^1.0.1",
+    "sqlite": "^4.0.19",
+    "sqlite3": "^5.0.2",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue-validate": "^1.0.1",
+    "vueify": "^9.4.1",
+    "vuelidate": "^0.7.6",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha",
+    "build": "browserify ./js-src/app.js --debug | exorcist ./public/assets/js/app-build.js.map > ./public/assets/js/app-build.js",
+    "start": "start-express",
+    "start-php": "php -S localhost:8000 -t ./public",
+    "start-express": "node ./js-src/server/index.js; open http://localhost:8000"
+  },
+  "browser": {
+    "vue": "./node_modules/vue/dist/vue.js"
+  },
+  "browserify": {
+    "transform": [
+      "brfs",
+      "vueify"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}

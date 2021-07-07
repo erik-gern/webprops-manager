@@ -1,0 +1,141 @@
+nodemodules:
+  table: vNodeModules
+plugins:
+  table: vPlugins
+  writeTable: Plugins
+  dataCols:
+    - title
+    - folder_name
+    - description
+    - url
+    - is_internal
+  selectCols:
+    - id
+    - title
+    - folder_name
+    - description
+    - url
+    - is_internal
+    - sites_count
+    - search_text
+  softDelete: true
+  softDeleteCol: _deleted
+  softDeleteVal: 1
+sites:
+  table: vSites
+  writeTable: Sites
+  dataCols:
+    - title
+    - url
+    - admin_url
+    - host
+    - description
+    - php_version_major
+    - php_version_minor
+    - php_version_patch
+    - wordpress_version_major
+    - wordpress_version_minor
+    - wordpress_version_patch
+    - has_2factor
+    - ssl_expiry
+    - ssl_provider
+    - email_from_name
+    - email_from_address
+    - admin_address
+    - last_reviewed
+  selectCols:
+    - id
+    - title
+    - url
+    - admin_url
+    - host
+    - description
+    - php_version_major
+    - php_version_minor
+    - php_version_patch
+    - wordpress_version_major
+    - wordpress_version_minor
+    - wordpress_version_patch
+    - has_2factor
+    - ssl_expiry
+    - ssl_provider
+    - email_from_name
+    - email_from_address
+    - admin_address
+    - last_reviewed
+    - plugins_installed
+    - plugins_active
+    - themes_installed
+    - primary_theme
+    - users_count
+    - php_version
+    - wordpress_version
+    - lastreview_isexpired
+    - lastreview_dayssince
+    - search_text
+  softDelete: true
+  softDeleteCol: _deleted
+  softDeleteVal: 1
+sites_plugins:
+  table: vSites_Plugins
+  writeTable: Sites_Plugins
+  dataCols:
+    - site_id
+    - plugin_id
+    - is_active
+    - can_update
+  selectCols:
+    - site_id
+    - plugin_id
+    - is_active
+    - can_update
+    - site_title
+    - plugin_title
+  ids:
+    - site_id
+    - plugin_id
+sites_themes:
+  table: vSites_Themes
+  writeTable: Sites_Themes
+  dataCols:
+    - site_id
+    - theme_id
+    - is_primary
+    - can_update
+  selectCols:
+    - site_id
+    - theme_id
+    - is_primary
+    - can_update
+    - site_title
+    - theme_title
+    - parent_title
+  ids:
+    - site_id
+    - theme_id
+sites_users:
+  table: vSites_Users
+  writeTable: Sites_Users
+  dataCols:
+    - site_id
+    - user_id
+    - username
+    - role
+  selectCols:
+    - site_id
+    - user_id
+    - role
+    - is_active
+    - is_employee
+    - name_first
+    - name_last
+    - emailaddress
+    - username
+    - site_title
+  ids:
+    - site_id
+    - user_id
+themes:
+  table: vThemes
+users:
+  table: vUsers
